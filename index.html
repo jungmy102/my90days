@@ -1,0 +1,186 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#15263b"><title>My 90 Days</title><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="90일 생활 루틴, 체중·전신사진, 스마트폰 사용시간 관리"><style>:root{font-family:system-ui,-apple-system,'Noto Sans KR',sans-serif;color:#182638;background:#f3f6fa}*{box-sizing:border-box}body{margin:0}header{background:#15263b;color:white;padding:24px 18px 22px}header small{color:#a9c4e2}.wrap{max-width:620px;margin:auto}main{padding:16px 14px 90px}.card{background:white;border-radius:17px;padding:18px;margin-bottom:14px;box-shadow:0 3px 16px #1429430b}h1{margin:4px 0 8px;font-size:26px}h2{font-size:18px;margin:0 0 14px}p{line-height:1.55}.muted{color:#69788b;font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#eaf1fa;border-radius:12px;padding:12px;text-align:center}.stat b{display:block;font-size:21px}.stat span{font-size:11px;color:#52647b}.bar{height:11px;background:#e5ebf2;border-radius:20px;overflow:hidden;margin-top:12px}.fill{height:100%;background:#327cbb;width:0%;transition:width .2s}.tabs{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:center;box-shadow:0 -3px 20px #15263b15;padding-bottom:env(safe-area-inset-bottom);z-index:10}.tabs button{flex:1;max-width:160px;border:0;background:white;padding:14px 4px;color:#66768b;font-weight:700}.tabs button.active{color:#1669aa;border-top:3px solid #1669aa}.hidden{display:none}.task{display:flex;gap:12px;align-items:center;padding:12px 2px;border-bottom:1px solid #eef1f5}.task:last-child{border:0}.task input{width:22px;height:22px;accent-color:#1776b9}.task label{flex:1;line-height:1.4}.task small{display:block;color:#738093;font-size:12px;margin-top:2px}button.primary{border:0;background:#1769a5;color:white;padding:12px 16px;border-radius:11px;font-weight:700}button.secondary{border:1px solid #d0dbe7;background:white;padding:11px 14px;border-radius:11px;font-weight:650;color:#23394e}input[type=date],input[type=number],select{font:inherit;border:1px solid #cbd5e1;border-radius:10px;padding:9px;max-width:100%;background:white}.line{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.pill{border-radius:20px;padding:5px 10px;background:#eaf1fa;color:#24567c;font-size:12px;font-weight:700}.weekrow{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #edf1f5;padding:12px 0;gap:8px}.weekrow:last-child{border:0}.weekrow b{font-size:14px}.weekrow small{display:block;color:#758399}.good{color:#18845b}.bad{color:#bb6d21}.weight-list{display:flex;gap:6px;align-items:end;height:110px;margin-top:14px}.weight-list div{flex:1;background:#5b9dd0;min-height:4px;border-radius:4px 4px 0 0}.weight-list div span{display:none}.foot{font-size:12px;color:#78879a;margin-top:12px}textarea{width:100%;min-height:75px;font:inherit;padding:10px;border:1px solid #cbd5e1;border-radius:10px} .daynote{background:#f0f6fc;border-left:4px solid #3787c5;padding:12px;border-radius:6px;margin:10px 0} .toggle{display:flex;align-items:center;gap:8px} .toggle input{width:20px;height:20px} .tiny{font-size:12px}.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.photo-grid img{width:100%;aspect-ratio:3/4;object-fit:contain;background:#eaf1fa;border-radius:10px}.photo-grid .empty{aspect-ratio:3/4;display:grid;place-items:center;background:#edf2f7;border-radius:10px;color:#758399;font-size:13px}.photo-grid label{font-size:12px;color:#52647b}.photo-grid select{width:100%}.photo-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.photo-actions button{flex:1}.privacy{background:#fff7e8;padding:10px;border-radius:9px;font-size:12px;color:#75521c}
+.usage-row{display:grid;grid-template-columns:1fr 88px 88px;gap:7px;align-items:center;padding:10px 0;border-bottom:1px solid #e8edf4}.usage-row label{font-weight:650;font-size:14px}.usage-row input{width:100%;min-width:0}.usage-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.usage-summary .stat{padding:14px 7px}.usage-bar{height:10px;background:#e8edf4;border-radius:20px;overflow:hidden;margin:6px 0 12px}.usage-bar>div{height:100%;background:#2b7aa9;border-radius:20px}.usage-day{padding:9px 0;border-bottom:1px solid #e8edf4}.usage-day small{color:#6a7b90}.usage-warning{font-size:12px;color:#795b23;background:#fff6df;border-radius:9px;padding:10px;margin-top:12px}
+ 
+.usage-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}.usage-controls select,.usage-controls input{max-width:125px}.usage-chart{display:flex;align-items:end;gap:6px;min-height:150px;padding:12px 4px 4px;border-bottom:1px solid #dce5ef}.usage-chart .barcol{flex:1;min-width:0;text-align:center}.usage-chart .bar{background:#5a85d7;border-radius:5px 5px 0 0;min-height:2px}.usage-chart small{font-size:10px;color:#65758b}.usage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.usage-grid .stat{min-width:0}.usage-appbar{height:10px;border-radius:12px;background:#e6edf6;overflow:hidden;margin:5px 0 12px}.usage-appbar>div{height:100%;background:#5a85d7}.usage-mini{font-size:12px;color:#63748c}.usage-status{font-size:13px;padding:10px;border-radius:10px;background:#edf3fc;margin-top:8px}.usage-history-scroll{max-height:350px;overflow:auto}.usage-input-note{font-size:12px;color:#66758a}.usage-fields-compact{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center}.usage-controls button{padding:9px 12px}
+</style></head><body><div class="wrap"><header><small>90일 생활관리 프로젝트</small><h1>My 90 Days</h1><div id="headline">오늘도 작은 실천부터 시작하세요.</div></header><main><section id="today"><div class="card"><div class="line" style="justify-content:space-between"><h2 style="margin:0">오늘의 체크리스트</h2><input type="date" id="date"></div><p class="muted" id="dayInfo"></p><div class="stats"><div class="stat"><b id="done">0/0</b><span>완료 항목</span></div><div class="stat"><b id="score">0%</b><span>오늘 달성률</span></div><div class="stat"><b id="daynum">1일</b><span>프로젝트 경과</span></div></div><div class="bar"><div class="fill" id="progress"></div></div></div><div class="card"><div class="toggle"><input type="checkbox" id="overtime"><label for="overtime"><b>오늘은 야근 / 피로 회복 모드</b><small style="display:block;color:#738093">운동 대신 휴식·수면을 목표로 전환</small></label></div><div class="daynote" id="suggestion"></div><div id="tasks"></div></div><div class="card"><h2>오늘의 기록</h2><div class="line"><label for="weight">체중(kg)</label><input id="weight" type="number" min="30" max="250" step="0.1" placeholder="예: 93.0"><button class="secondary" id="saveWeight">저장</button></div><p class="muted">체중은 가능하면 아침 같은 조건에서 기록하세요.</p><div style="margin:16px 0;border-top:1px solid #e7edf4;padding-top:14px"><h2>아침 전신사진</h2><p class="muted">매일 체중을 재고, 전신사진은 같은 장소·거리·조명에서 촬영하세요. 사진은 선택한 날짜에 저장됩니다.</p><label class="secondary" style="display:inline-block;cursor:pointer">📷 촬영 또는 사진 선택<input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none"></label><p class="muted" id="photoStatus">사진을 불러오는 중…</p><div id="todayPhoto"></div><div class="photo-actions"><button class="secondary" id="deletePhoto" type="button">오늘 사진 삭제</button></div></div><label for="note">메모 / 내일 가장 중요한 업무</label><textarea id="note" placeholder="오늘 컨디션, 야근, 운동, 내일 할 일 등"></textarea><button class="primary" id="saveNote" style="margin-top:8px">메모 저장</button></div></section><section id="week" class="hidden"><div class="card"><h2>최근 7일 점검</h2><p class="muted">선택한 날짜를 포함한 최근 7일 기준입니다.</p><div id="weekly"></div></div><div class="card"><h2>이번 주 조정 가이드</h2><div id="advice"></div></div></section><section id="weightTab" class="hidden"><div class="card"><h2>체중 관리</h2><div class="stats"><div class="stat"><b>93</b><span>시작 kg</span></div><div class="stat"><b id="latestWeight">—</b><span>최근 기록 kg</span></div><div class="stat"><b>88~90</b><span>90일 목표 kg</span></div></div><div class="weight-list" id="weightBars"></div><p class="muted" id="weightSummary"></p></div><div class="card"><h2>📷 전신사진 변화 비교</h2><p class="muted">두 날짜를 선택하면 전신사진을 나란히 비교할 수 있습니다.</p><div class="photo-grid"><div><label>이전 사진</label><select id="beforeDate"></select><div id="beforePhoto" class="empty">사진 없음</div></div><div><label>최근 사진</label><select id="afterDate"></select><div id="afterPhoto" class="empty">사진 없음</div></div></div><p class="muted" id="photoDelta"></p><p class="privacy">사진은 서버로 전송하지 않고 이 브라우저의 기기 저장공간에 보관합니다. 브라우저 데이터 삭제 시 사라질 수 있습니다.</p></div><div class="card"><h2>90일 진행 상황</h2><div class="bar"><div class="fill" id="periodProgress"></div></div><p id="periodText" class="muted"></p></div></section><section id="usageTab" class="hidden"><div class="card"><h2>📱 스마트폰 앱 사용시간</h2><p class="muted" id="usageDate"></p><p class="muted">갤럭시 <b>설정 → 디지털 웰빙 및 자녀 보호 기능 → 대시보드</b>에서 앱별 사용시간을 확인하고 입력하세요.</p><div class="usage-summary"><div class="stat"><b id="usageTotal">0분</b><span>선택 날짜 전체</span></div><div class="stat"><b id="usageSocial">0분</b><span>유튜브 + 인스타</span></div></div><div id="usageFields"></div><button class="primary" id="saveUsage" style="width:100%;margin-top:15px">오늘 사용시간 저장</button><p class="usage-warning">웹브라우저는 다른 앱의 사용시간을 자동으로 읽을 수 없습니다. 입력한 수치는 앱별 전체 사용시간이며 유튜브 쇼츠·일반 영상이나 인스타 릴스·일반 이용을 자동으로 구분하지 않습니다.</p></div><div class="card"><h2>최근 7일 사용시간</h2><p class="muted">날짜별 합계와 앱별 이용시간을 확인하세요. 기록하지 않은 날은 '미입력'으로 표시합니다.</p><div class="usage-controls"><label for="usagePeriod">통계 기간</label><select id="usagePeriod"><option value="7">최근 7일</option><option value="14">최근 14일</option><option value="30" selected>최근 30일</option><option value="90">최근 90일</option></select><button type="button" class="secondary" id="usageCsv">CSV 내보내기</button></div><div class="usage-grid"><div class="stat"><b id="usageAvg">—</b><span>입력일 하루 평균</span></div><div class="stat"><b id="usageRecorded">—</b><span>입력일 / 기간</span></div><div class="stat"><b id="usageGoalDays">—</b><span>유튜브+인스타 목표 달성</span></div><div class="stat"><b id="usageOttAvg">—</b><span>OTT 하루 평균</span></div></div><h3>날짜별 총 사용시간</h3><div id="usageChart" class="usage-chart"></div><p class="usage-input-note">막대는 기록된 날짜만 표시하며 미입력 날짜는 0분으로 계산하지 않습니다.</p><h3>앱별 사용 비중</h3><div id="usageBreakdown"></div><h3>날짜별 상세 내역</h3><div id="usageHistory" class="usage-history-scroll"></div></div><div class="card"><h2>사용시간 줄이기 목표</h2><p class="muted">유튜브와 인스타그램 전체 이용시간을 하루 20분 이내로 관리하는 것은 쇼츠·릴스 과몰입을 줄이기 위한 엄격한 시작 목표입니다. 드럼 학습영상 등 필요한 시청은 메모에 따로 남겨두세요.</p><div class="usage-controls"><label for="usageGoal">유튜브+인스타 일일 목표 (분)</label><input type="number" id="usageGoal" min="0" max="1440" value="20" inputmode="numeric"><button class="secondary" type="button" id="saveUsageGoal">목표 저장</button></div><div id="usageWeeklyGoal"></div><div id="usageInsights" class="usage-status"></div><p class="usage-input-note">갤럭시 디지털 웰빙의 앱별 총 사용시간을 수동 입력합니다. 쇼츠·릴스만의 시간을 별도로 식별하지 않습니다.</p></div></section><section id="settings" class="hidden"><div class="card"><h2>생활 루틴</h2><p>월: 드럼 레슨<br>화: 복싱 우선<br>수: 밴드 합주 20~22시<br>목: 유산소 30분<br>금: 휴식·예비일<br>토: 드럼 레슨<br>일: 유산소 40~50분 + 주간 점검</p><p class="muted">야근은 주 2~3회, 오후 8~9시 귀가를 기준으로 합니다.</p></div><div class="card"><h2>데이터 백업</h2><p class="muted">기록은 이 기기의 브라우저에만 저장됩니다. 브라우저 데이터 삭제 또는 기기 변경 시 사라질 수 있으므로 주기적으로 백업하세요.</p><div class="line"><button class="primary" id="export">기록 내보내기</button><label class="secondary" style="cursor:pointer">백업 불러오기<input type="file" id="import" accept="application/json" style="display:none"></label></div></div><div class="card"><h2>전신사진 별도 백업</h2><p class="muted">위의 '기록 내보내기'는 체중·체크리스트·메모만 백업합니다. 사진은 아래 버튼으로 별도 백업하고, 복원할 때도 따로 불러오세요. 사진 백업 파일은 민감하므로 안전하게 보관하세요.</p><div class="line"><button class="secondary" id="exportPhotos">사진 백업</button><label class="secondary" style="cursor:pointer">사진 복원<input type="file" id="importPhotos" accept="application/json" style="display:none"></label></div></div><div class="card"><h2>알림 안내</h2><p class="muted">이 웹페이지 자체에는 푸시 알림 서버가 없습니다. 기존 ChatGPT의 매일 오전 6시 체크와 일요일 오후 8시 점검 알림을 계속 이용하세요.</p></div></section></main></div><nav class="tabs"><button class="active" data-tab="today">✓ 오늘</button><button data-tab="week">▤ 주간</button><button data-tab="weightTab">◉ 체중</button><button data-tab="usageTab">📱 사용</button><button data-tab="settings">⚙ 설정</button></nav><script>const KEY='my90days-v1',START='2026-11-25';let data={days:{}};try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.days)data=x}catch(e){}const $=id=>document.getElementById(id),dateInput=$('date');function localDate(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}dateInput.value=localDate(new Date());function save(){localStorage.setItem(KEY,JSON.stringify(data))}function rec(k){return data.days[k]||(data.days[k]={tasks:{},overtime:false,weight:null,note:''})}function weekday(k){return new Date(k+'T12:00:00').getDay()}const plans=['걷기·러닝 40~50분 + 주간 점검','드럼 레슨','복싱 45~60분','밴드 합주 20~22시','걷기·유산소 30분','휴식·예비일','드럼 레슨'];const names=['일','월','화','수','목','금','토'];function taskSet(k,r){let a=[['work','회사 최우선 업무 1개 확인','출근 후 가장 중요한 일부터'],['food','식사량·야식 관리','단백질과 채소 챙기기'],['phone','쇼츠·릴스 20분 이내','무의식적 시청 차단'],['sleep','수면·회복 챙기기','가능하면 7~9시간 수면']];if(r.overtime){a.push(['recover','가벼운 회복 활동','스트레칭 5분 또는 휴식']);}else{let w=weekday(k);if(w===1||w===6)a.push(['drum','드럼 레슨 또는 연습','어려운 구간 1~2개 집중']);if(w===3)a.push(['drum','밴드 합주·녹음 확인','합주 전 준비, 종료 후 회복']);if(w===2)a.push(['boxing','복싱 또는 대체 걷기','야근이면 회복 모드로 전환']);if(w===4||w===0)a.push(['cardio','걷기·유산소','통증 시 강도 낮추기']);if(w===5)a.push(['rest','의도적인 휴식','휴식도 성공입니다']);}return a}function renderToday(){let k=dateInput.value,r=rec(k),w=weekday(k);$('dayInfo').textContent=`${k} (${names[w]}) · ${plans[w]}`;$('overtime').checked=!!r.overtime;$('suggestion').textContent=r.overtime?'야근일: 운동 의무 없음. 식사·샤워·휴식 후 수면을 우선하세요.':`오늘 권장 일정: ${plans[w]}. 과로하지 말고 가능한 만큼만 실행하세요.`;let ts=taskSet(k,r),html='';ts.forEach(t=>{html+=`<div class="task"><input type="checkbox" id="task-${t[0]}" data-task="${t[0]}" ${r.tasks[t[0]]?'checked':''}><label for="task-${t[0]}"><b>${t[1]}</b><small>${t[2]}</small></label></div>`});$('tasks').innerHTML=html;document.querySelectorAll('[data-task]').forEach(el=>el.onchange=()=>{r.tasks[el.dataset.task]=el.checked;save();renderToday()});let n=ts.filter(t=>r.tasks[t[0]]).length,p=Math.round(n/ts.length*100);$('done').textContent=`${n}/${ts.length}`;$('score').textContent=p+'%';$('progress').style.width=p+'%';let elapsed=Math.floor((new Date(k+'T12:00:00')-new Date(START+'T12:00:00'))/86400000)+1;$('daynum').textContent=(elapsed<1?'시작 전':Math.min(90,elapsed)+'일');$('weight').value=r.weight??'';$('note').value=r.note||'';$('headline').textContent=p===100?'오늘의 계획을 모두 마쳤습니다!':'완벽보다 꾸준함, 오늘도 한 걸음.'}function range(){let end=new Date(dateInput.value+'T12:00:00'),out=[];for(let i=6;i>=0;i--){let d=new Date(end);d.setDate(d.getDate()-i);out.push(localDate(d))}return out}function renderWeek(){let days=range(),counts={boxing:0,cardio:0,drum:0,phone:0,sleep:0},weights=[],overtime=0;days.forEach(k=>{let r=data.days[k];if(!r)return;if(r.overtime)overtime++;if(r.tasks?.boxing)counts.boxing++;if(r.tasks?.cardio)counts.cardio++;if(r.tasks?.drum)counts.drum++;if(r.tasks?.phone)counts.phone++;if(r.tasks?.sleep)counts.sleep++;if(Number(r.weight)>0)weights.push(Number(r.weight))});let items=[['복싱',counts.boxing,1,'회'],['유산소',counts.cardio,2,'회'],['드럼 레슨·합주',counts.drum,3,'회'],['스마트폰 제한',counts.phone,5,'일'],['수면 관리',counts.sleep,5,'일']];$('weekly').innerHTML=items.map(t=>`<div class="weekrow"><div><b>${t[0]}</b><small>목표 ${t[2]}${t[3]}</small></div><strong class="${t[1]>=t[2]?'good':'bad'}">${t[1]}${t[3]} ${t[1]>=t[2]?'✓':'·'}</strong></div>`).join('')+`<div class="weekrow"><b>야근 기록</b><strong>${overtime}일</strong></div><div class="weekrow"><b>체중 평균</b><strong>${weights.length?(weights.reduce((a,b)=>a+b,0)/weights.length).toFixed(1)+'kg':'기록 없음'}</strong></div>`;$('advice').textContent=overtime>=3?'야근이 많았던 주입니다. 다음 주 운동량을 억지로 늘리지 말고 수면과 복싱 1회에 집중하세요.':counts.boxing<1?'다음 주 복싱 가능한 날을 먼저 예약하세요. 화요일이 어렵다면 금요일을 예비일로 사용하세요.':'잘 진행하고 있습니다. 무리한 추가 운동보다는 현재 루틴을 유지하세요.'}function renderWeight(){let entries=Object.entries(data.days).filter(([k,v])=>Number(v.weight)>0).sort((a,b)=>a[0].localeCompare(b[0]));let recent=entries.slice(-12);$('latestWeight').textContent=entries.length?Number(entries.at(-1)[1].weight).toFixed(1):'—';$('weightBars').innerHTML=recent.length?recent.map(([k,v])=>{let h=Math.max(12,Math.min(100,35+(Number(v.weight)-85)*5));return `<div title="${k}: ${v.weight}kg" style="height:${h}%"></div>`}).join(''):'<p class="muted">오늘 탭에서 체중을 기록하면 그래프가 나타납니다.</p>';$('weightSummary').textContent=entries.length?`첫 기록 ${entries[0][1].weight}kg → 최근 ${entries.at(-1)[1].weight}kg · 최근 ${recent.length}개 기록 표시`:'체중 기록이 아직 없습니다.';let n=Math.max(0,Math.min(90,Math.floor((new Date(dateInput.value+'T12:00:00')-new Date(START+'T12:00:00'))/86400000)+1));$('periodProgress').style.width=(n/90*100)+'%';$('periodText').textContent=`90일 중 ${n}일 경과 (${Math.round(n/90*100)}%)`}dateInput.onchange=()=>{renderToday();renderWeek();renderWeight()};$('overtime').onchange=e=>{let r=rec(dateInput.value);r.overtime=e.target.checked;save();renderToday()};$('saveWeight').onclick=()=>{let v=Number($('weight').value);if(!v||v<30||v>250){alert('올바른 체중을 입력해 주세요.');return}rec(dateInput.value).weight=v;save();renderWeight();alert('체중을 저장했습니다.')};$('saveNote').onclick=()=>{rec(dateInput.value).note=$('note').value;save();alert('메모를 저장했습니다.')};document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));['today','week','weightTab','usageTab','settings'].forEach(id=>$(id).classList.toggle('hidden',id!==b.dataset.tab));renderWeek();renderWeight();window.scrollTo(0,0)});$('export').onclick=()=>{let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my90days-backup-'+localDate(new Date())+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('import').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let x=JSON.parse(await f.text());if(!x.days||typeof x.days!=='object')throw Error();if(confirm('현재 기록을 백업 파일의 기록으로 교체할까요?')){data=x;save();renderToday();renderWeek();renderWeight()}}catch(err){alert('올바른 백업 파일이 아닙니다.')}};renderToday();renderWeek();renderWeight();
+// 전신사진은 용량 제한이 작은 localStorage 대신 IndexedDB에 저장합니다.
+const PHOTO_DB='my90days-photos', PHOTO_STORE='dailyPhotos';
+let photoDbPromise;
+function photoDb(){
+ if(!photoDbPromise) photoDbPromise=new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(Error('이 브라우저는 사진 저장을 지원하지 않습니다.'));return}
+  const req=indexedDB.open(PHOTO_DB,1);
+  req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(PHOTO_STORE))req.result.createObjectStore(PHOTO_STORE)};
+  req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);
+ });
+ return photoDbPromise;
+}
+async function photoOp(mode,key,value){
+ const db=await photoDb();
+ return new Promise((resolve,reject)=>{
+  const tx=db.transaction(PHOTO_STORE,mode==='get'||mode==='keys'?'readonly':'readwrite');
+  const store=tx.objectStore(PHOTO_STORE);
+  const req=mode==='get'?store.get(key):mode==='put'?store.put(value,key):mode==='delete'?store.delete(key):store.getAllKeys();
+  req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);
+ });
+}
+function compressPhoto(file){
+ return new Promise((resolve,reject)=>{
+  const image=new Image(),url=URL.createObjectURL(file);
+  image.onload=()=>{
+   try{
+    const max=1200,scale=Math.min(1,max/Math.max(image.naturalWidth,image.naturalHeight));
+    const canvas=document.createElement('canvas');canvas.width=Math.round(image.naturalWidth*scale);canvas.height=Math.round(image.naturalHeight*scale);
+    canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);
+    resolve(canvas.toDataURL('image/jpeg',.78));
+   }catch(e){reject(e)}finally{URL.revokeObjectURL(url)}
+  };
+  image.onerror=()=>{URL.revokeObjectURL(url);reject(Error('사진을 읽지 못했습니다.'))};
+  image.src=url;
+ });
+}
+function downloadJson(obj,filename){
+ const url=URL.createObjectURL(new Blob([JSON.stringify(obj)],{type:'application/json'}));
+ const a=document.createElement('a');a.href=url;a.download=filename;a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),3000);
+}
+async function renderTodayPhoto(){
+ const key=dateInput.value,el=$('todayPhoto');
+ try{
+  const value=await photoOp('get',key);
+  if(dateInput.value!==key)return;
+  el.innerHTML='';
+  if(value){const img=document.createElement('img');img.src=value;img.alt=key+' 전신사진';img.style='width:100%;max-height:390px;object-fit:contain;border-radius:12px;background:#edf2f7';el.append(img)}
+  $('photoStatus').textContent=value?key+' 전신사진 저장됨':'이 날짜에 저장된 사진이 없습니다.';
+  $('deletePhoto').disabled=!value;
+ }catch(e){$('photoStatus').textContent='사진 저장소를 사용할 수 없습니다: '+e.message}
+}
+async function renderCompare(){
+ try{
+  const keys=(await photoOp('keys')).sort();
+  const a=$('beforeDate'),b=$('afterDate'),oldA=a.value,oldB=b.value;
+  for(const sel of [a,b]){sel.replaceChildren();for(const k of keys){const opt=document.createElement('option');opt.value=k;opt.textContent=k;sel.append(opt)}}
+  if(keys.length){a.value=keys.includes(oldA)?oldA:keys[0];b.value=keys.includes(oldB)?oldB:keys[keys.length-1]}
+  for(const [sel,id] of [[a,'beforePhoto'],[b,'afterPhoto']]){
+   const el=$(id);el.replaceChildren();
+   const val=sel.value?await photoOp('get',sel.value):null;
+   if(val){const img=document.createElement('img');img.src=val;img.alt=sel.value+' 전신사진';el.append(img)}
+   else {el.className='empty';el.textContent='사진 없음'}
+  }
+  const x=data.days[a.value]?.weight,y=data.days[b.value]?.weight;
+  $('photoDelta').textContent=x>0&&y>0?`선택 날짜 체중: ${x}kg → ${y}kg (${(y-x)>0?'+':''}${(y-x).toFixed(1)}kg)`:'두 날짜의 체중을 기록하면 체중 변화도 함께 표시됩니다.';
+ }catch(e){$('photoDelta').textContent='사진 비교를 사용할 수 없습니다: '+e.message}
+}
+$('photoInput').onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ const key=dateInput.value;
+ try{
+  $('photoStatus').textContent='사진 저장 중…';
+  const val=await compressPhoto(file);
+  await photoOp('put',key,val);
+  await renderTodayPhoto();await renderCompare();
+ }catch(err){alert('사진 저장 실패: '+err.message)}
+ e.target.value='';
+};
+$('deletePhoto').onclick=async()=>{
+ if(!confirm(dateInput.value+'의 전신사진을 삭제할까요?'))return;
+ await photoOp('delete',dateInput.value);await renderTodayPhoto();await renderCompare();
+};
+$('beforeDate').onchange=renderCompare;$('afterDate').onchange=renderCompare;
+$('exportPhotos').onclick=async()=>{
+ try{
+  const keys=await photoOp('keys'),photos={};
+  for(const k of keys)photos[k]=await photoOp('get',k);
+  downloadJson({type:'my90days-photos',version:1,photos},'my90days-photos-'+localDate(new Date())+'.json');
+ }catch(e){alert('사진 백업 실패: '+e.message)}
+};
+$('importPhotos').onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+  const obj=JSON.parse(await file.text());
+  if(obj.type!=='my90days-photos'||!obj.photos||typeof obj.photos!=='object')throw Error('올바른 사진 백업 파일이 아닙니다.');
+  const entries=Object.entries(obj.photos);
+  if(entries.some(([k,v])=>!/^\d{4}-\d{2}-\d{2}$/.test(k)||typeof v!=='string'||!v.startsWith('data:image/jpeg;base64,')))throw Error('사진 백업 형식이 잘못되었습니다.');
+  if(confirm(`${entries.length}장의 사진을 복원할까요? 같은 날짜의 사진은 덮어씁니다.`)){
+   for(const [k,v] of entries)await photoOp('put',k,v);
+   await renderTodayPhoto();await renderCompare();alert('사진 복원이 완료되었습니다.');
+  }
+ }catch(err){alert('사진 복원 실패: '+err.message)}
+ e.target.value='';
+};
+const oldDateChange=dateInput.onchange;
+dateInput.onchange=()=>{oldDateChange();renderTodayPhoto()};
+const oldTabHandlers=[...document.querySelectorAll('[data-tab]')];
+for(const btn of oldTabHandlers){const old=btn.onclick;btn.onclick=()=>{old();if(btn.dataset.tab==='weightTab')renderCompare();if(btn.dataset.tab==='today')renderTodayPhoto()}}
+renderTodayPhoto();renderCompare();
+
+const USAGE_APPS=[['netflix','넷플릭스'],['wavve','웨이브'],['disney','디즈니+'],['tving','티빙'],['youtube','유튜브'],['instagram','인스타그램']];
+const fmtUsage=n=>{n=Math.max(0,Math.round(n||0));return n>=60?`${Math.floor(n/60)}시간 ${n%60}분`:`${n}분`};
+function usageData(k){const u=data.days[k]?.usage;return u&&typeof u==='object'?u:null}
+function renderUsage(){
+ const k=dateInput.value,usage=usageData(k),fields=$('usageFields');
+ $('usageDate').textContent=`기록 날짜: ${k} · 오늘 탭의 날짜 선택기로 변경할 수 있습니다.`;
+ fields.innerHTML=USAGE_APPS.map(([id,name])=>{const min=Math.max(0,Number(usage?.[id])||0);return `<div class="usage-row"><label for="usage-${id}">${name}</label><input aria-label="${name} 시간" type="number" id="usage-${id}-h" min="0" max="24" value="${Math.floor(min/60)}" placeholder="시간"><input aria-label="${name} 분" type="number" id="usage-${id}-m" min="0" max="59" value="${min%60}" placeholder="분"></div>`}).join('');
+ fields.insertAdjacentHTML('afterbegin','<div class="usage-row"><span class="muted">앱</span><span class="muted">시간</span><span class="muted">분</span></div>');
+ fields.querySelectorAll('input').forEach(el=>el.addEventListener('input',updateUsageTotals));
+ updateUsageTotals();renderUsageHistory();
+}
+function readUsageFields(){const o={};for(const [id] of USAGE_APPS){const h=Number($(`usage-${id}-h`).value),m=Number($(`usage-${id}-m`).value);if(!Number.isInteger(h)||h<0||h>24||!Number.isInteger(m)||m<0||m>59||(h===24&&m!==0))throw Error('시간은 0~24, 분은 0~59 범위로 입력하세요.');o[id]=h*60+m}return o}
+function updateUsageTotals(){try{const u=readUsageFields();$('usageTotal').textContent=fmtUsage(Object.values(u).reduce((a,b)=>a+b,0));$('usageSocial').textContent=fmtUsage(u.youtube+u.instagram)}catch(e){$('usageTotal').textContent='입력 확인 필요'}}
+$('saveUsage').onclick=()=>{try{const u=readUsageFields();rec(dateInput.value).usage=u;save();renderUsage();alert('앱별 사용시간을 저장했습니다.')}catch(e){alert(e.message)}};
+function renderUsageHistory(){const ks=range().reverse(),box=$('usageHistory');let valid=0,success=0;
+ box.replaceChildren();
+ for(const k of ks){const u=usageData(k),row=document.createElement('div');row.className='usage-day';
+ const top=document.createElement('div');top.style='display:flex;justify-content:space-between;gap:8px';const day=document.createElement('b');day.textContent=k.slice(5);const amount=document.createElement('b');amount.textContent=u?fmtUsage(USAGE_APPS.reduce((a,[id])=>a+(Number(u[id])||0),0)):'미입력';top.append(day,amount);row.append(top);
+ if(u){valid++;const social=(Number(u.youtube)||0)+(Number(u.instagram)||0);if(social<=20)success++;const details=document.createElement('small');details.textContent=USAGE_APPS.map(([id,name])=>`${name} ${fmtUsage(u[id])}`).join(' · ');row.append(details);
+ const total=USAGE_APPS.reduce((a,[id])=>a+(Number(u[id])||0),0),bar=document.createElement('div');bar.className='usage-bar';const fill=document.createElement('div');fill.style.width=Math.min(100,total/480*100)+'%';bar.append(fill);row.append(bar);
+ }box.append(row)}
+ $('usageWeeklyGoal').textContent=`최근 7일 중 ${valid}일 입력 · 유튜브+인스타 20분 이하 ${success}일 (목표 주 5일)`;
+}
+const oldDateForUsage=dateInput.onchange;
+dateInput.onchange=()=>{oldDateForUsage();renderUsage()};
+for(const btn of document.querySelectorAll('[data-tab]')){const oldClick=btn.onclick;btn.onclick=()=>{oldClick();if(btn.dataset.tab==='usageTab')renderUsage()}};
+renderUsage();
+
+// 사용시간 분석 확장: 기존 my90days-v1 기록을 그대로 사용합니다.
+const usagePrefsKey='my90days-usage-prefs';
+let usagePrefs={goal:20};try{const x=JSON.parse(localStorage.getItem(usagePrefsKey));if(x&&Number.isFinite(Number(x.goal)))usagePrefs.goal=Number(x.goal)}catch(e){}
+$('usageGoal').value=usagePrefs.goal;
+function usagePeriodDates(){const end=new Date(dateInput.value+'T12:00:00'),n=Number($('usagePeriod').value)||30;return Array.from({length:n},(_,i)=>{const d=new Date(end);d.setDate(d.getDate()-(n-1-i));return localDate(d)})}
+function usageMinutes(u){return USAGE_APPS.reduce((sum,[id])=>sum+(Number(u?.[id])||0),0)}
+function usageSocialMinutes(u){return (Number(u?.youtube)||0)+(Number(u?.instagram)||0)}
+function usageOttMinutes(u){return ['netflix','wavve','disney','tving'].reduce((n,id)=>n+(Number(u?.[id])||0),0)}
+function usageSummary(){
+ const days=usagePeriodDates(),rows=days.map(k=>({k,u:usageData(k)})),filled=rows.filter(r=>r.u),goal=usagePrefs.goal;
+ const total=filled.reduce((n,r)=>n+usageMinutes(r.u),0),social=filled.reduce((n,r)=>n+usageSocialMinutes(r.u),0),ott=filled.reduce((n,r)=>n+usageOttMinutes(r.u),0),success=filled.filter(r=>usageSocialMinutes(r.u)<=goal).length;
+ $('usageAvg').textContent=filled.length?fmtUsage(total/filled.length):'—';$('usageRecorded').textContent=`${filled.length}/${days.length}일`;
+ $('usageGoalDays').textContent=filled.length?`${success}/${filled.length}일`:'—';$('usageOttAvg').textContent=filled.length?fmtUsage(ott/filled.length):'—';
+ const chart=$('usageChart');chart.replaceChildren();
+ const max=Math.max(60,...filled.map(r=>usageMinutes(r.u)));
+ for(const {k,u} of rows){const col=document.createElement('div');col.className='barcol';col.title=k+' '+(u?fmtUsage(usageMinutes(u)):'미입력');const bar=document.createElement('div');bar.className='bar';bar.style.height=u?Math.max(3,Math.round(120*usageMinutes(u)/max))+'px':'2px';bar.style.background=u?'#5a85d7':'#d8dfe9';col.append(bar);if(days.length<=14||k.endsWith('01')||k===days[days.length-1]){const t=document.createElement('small');t.textContent=k.slice(5);col.append(t)}chart.append(col)}
+ const breakdown=$('usageBreakdown');breakdown.replaceChildren();
+ for(const [id,name] of USAGE_APPS){const mins=filled.reduce((n,r)=>n+(Number(r.u[id])||0),0),pct=total?Math.round(mins/total*100):0;const title=document.createElement('div');title.className='usage-mini';title.textContent=`${name} · ${fmtUsage(mins)} (${pct}%)`;const bg=document.createElement('div');bg.className='usage-appbar';const bar=document.createElement('div');bar.style.width=pct+'%';bg.append(bar);breakdown.append(title,bg)}
+ const history=$('usageHistory');history.replaceChildren();
+ for(const {k,u} of [...rows].reverse()){
+  const row=document.createElement('div');row.className='usage-day';const header=document.createElement('div');header.style='display:flex;justify-content:space-between;gap:8px';const a=document.createElement('b');a.textContent=k;const b=document.createElement('b');b.textContent=u?fmtUsage(usageMinutes(u)):'미입력';header.append(a,b);row.append(header);
+  if(u){const info=document.createElement('small');info.textContent=USAGE_APPS.map(([id,name])=>`${name} ${fmtUsage(u[id])}`).join(' · ');row.append(info);const goalText=document.createElement('div');goalText.className='usage-mini';goalText.textContent=`유튜브+인스타 ${fmtUsage(usageSocialMinutes(u))} · ${usageSocialMinutes(u)<=goal?'목표 달성':'목표 초과'}`;row.append(goalText)}history.append(row)
+ }
+ const last7=rows.slice(-7),valid7=last7.filter(r=>r.u),good7=valid7.filter(r=>usageSocialMinutes(r.u)<=goal).length;
+ $('usageWeeklyGoal').textContent=`최근 7일: ${valid7.length}일 입력 · 목표 ${goal}분 이내 ${good7}일 / 주간 목표 5일`;
+ $('usageInsights').textContent=!filled.length?'아직 입력한 사용시간이 없습니다. 갤럭시 디지털 웰빙에서 확인한 뒤 입력하세요.':`선택 기간 중 OTT 총 ${fmtUsage(ott)}, 유튜브·인스타 총 ${fmtUsage(social)}. ${filled.length}일의 기록을 기준으로 계산했습니다. 기록이 없는 날은 통계에서 제외합니다.`;
+}
+// 기존 렌더 함수가 호출되는 모든 위치에서 최신 통계가 그려지도록 교체합니다.
+renderUsageHistory=usageSummary;
+$('usagePeriod').onchange=usageSummary;
+$('saveUsageGoal').onclick=()=>{const n=Number($('usageGoal').value);if(!Number.isInteger(n)||n<0||n>1440){alert('목표는 0~1440분으로 입력하세요.');return}usagePrefs.goal=n;localStorage.setItem(usagePrefsKey,JSON.stringify(usagePrefs));usageSummary();alert('사용시간 목표를 저장했습니다.')};
+$('usageCsv').onclick=()=>{
+ const head=['날짜',...USAGE_APPS.map(x=>x[1]),'총사용분','OTT분','유튜브+인스타분','목표달성'];
+ const lines=[head.join(',')];for(const k of usagePeriodDates()){const u=usageData(k);if(!u){lines.push([k,...Array(9).fill('')].join(','));continue}lines.push([k,...USAGE_APPS.map(([id])=>Number(u[id])||0),usageMinutes(u),usageOttMinutes(u),usageSocialMinutes(u),usageSocialMinutes(u)<=usagePrefs.goal?'Y':'N'].join(','))}
+ const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my90days-usage-'+dateInput.value+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
+};
+usageSummary();
+
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('오프라인 등록 실패',err)));
+}
+</script></body></html>
